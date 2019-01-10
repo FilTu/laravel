@@ -20,7 +20,7 @@ class TitleTableSeeder extends Seeder
 
         for ($i = 0; $i < 50; $i++) {
             Title::create([
-                'title' => $fake_data->sentence,
+                'title' => $fake_data->sentence($nbWords = 4, $variableNbWords = true),
             ]);
           }
       }

@@ -20,7 +20,7 @@ class MagazineTableSeeder extends Seeder
 
         for ($i = 0; $i < 50; $i++) {
             Magazine::create([
-                'name' => $fake_data->sentence,
+                'name' => $fake_data->company(),
             ]);
           }
       }
