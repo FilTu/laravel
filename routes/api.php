@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Magazine;
+use App\Publishers;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,3 +17,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('publishers/list', 'PublishersController@list');
+Route::get('magazines/{id}', 'MagazineController@show');
+Route::get('magazines/search/{key}', 'MagazineController@filter');
