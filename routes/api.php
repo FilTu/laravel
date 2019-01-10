@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('publishers/list', 'PublishersController@list');
 Route::get('magazines/{id}', 'MagazineController@show');
 Route::get('magazines/search/{key}', 'MagazineController@filter');
+Route::get('magazines/search/{key}/{page}', 'MagazineController@pagination');

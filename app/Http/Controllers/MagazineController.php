@@ -9,7 +9,7 @@ use App\Magazine;
 class MagazineController extends Controller
 {
   //show magazines by ID
-  
+
   public function show($id)
   {
     //select magazines by send ID
@@ -30,6 +30,19 @@ class MagazineController extends Controller
         ->where('name', 'like', '%'.$key.'%')
         ->orwhere('id', 'like', '%'.$key.'%')
         ->get();
+
+      return $show;
+  }
+
+  //show magazines with pagination
+
+  public function pagination($key, $page)
+  {
+        $show = DB::table('magazines')
+        ->select('*')
+        ->where('name', 'like', '%'.$key.'%')
+        ->orwhere('id', 'like', '%'.$key.'%')
+        ->paginate($page);
 
       return $show;
   }
