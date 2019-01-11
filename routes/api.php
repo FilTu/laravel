@@ -14,11 +14,15 @@ use App\Publishers;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Autoryzacja name=admin, password=admin
 
-Route::get('publishers/list', 'PublishersController@list');
-Route::get('magazines/{id}', 'MagazineController@show');
-Route::get('magazines/search/{key}', 'MagazineController@filter');
-Route::get('magazines/search/{key}/{page}', 'MagazineController@pagination');
+Route::post('authorize', 'AuthController@login');
+
+//Metody autozryzowane tokenem JWT
+
+Route::group(['middleware' => 'jwt.auth'], function () {
+  Route::get('publishers/list', 'PublishersController@list');
+  Route::get('magazines/{id}', 'MagazineController@show');
+  Route::get('magazines/search/{key}', 'MagazineController@filter');
+  Route::get('magazines/search/{key}/{page}', 'MagazineController@pagination');
+});

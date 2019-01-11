@@ -13,9 +13,11 @@ class TitleTableSeeder extends Seeder
     public function run()
     {
         //Truncate existing table
+
         Title::Truncate();
 
         //Inserting fake data
+        
         $fake_data = \Faker\Factory::create();
 
         for ($i = 0; $i < 50; $i++) {

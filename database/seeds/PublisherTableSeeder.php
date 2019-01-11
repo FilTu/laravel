@@ -13,9 +13,11 @@ class PublisherTableSeeder extends Seeder
     public function run()
     {
       //Truncate existing table
+
       Publishers::Truncate();
 
       //Inseting fake data
+      
       $fake_data = \Faker\Factory::create();
 
       for ($i = 0; $i < 50; $i++) {

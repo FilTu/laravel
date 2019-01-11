@@ -13,6 +13,7 @@ class MagazineController extends Controller
   public function show($id)
   {
     //select magazines by send ID
+    
     $show = DB::table('magazines')
       ->select('*')
       ->where('magazines.id', '=', $id)
