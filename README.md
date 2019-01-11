@@ -1,10 +1,16 @@
 # JSON API 
 Simple JSON API with JWT 
 
+
 ## Require Faker and Tymon\JWTAuth
 `composer require fzaninotto/faker`
 
 `composer require tymon/jwt-auth`
+
+## Edycja pliku .env (testowane na MySql)
+DB_CONNECTION,DB_HOST,DB_PORT,DB_DATABASE,DB_USERNAME,DB_PASSWORD
+
+`php artisan jwt:secret`
 
 ## Migracja i dane
 `php artisan migrate`
